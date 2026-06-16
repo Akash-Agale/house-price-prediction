@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏠 House Price Prediction — End-to-End ML Project
 
 <p align="left">
@@ -196,3 +197,7 @@ This project is licensed under the MIT License — feel free to use and modify i
 ---
 
 <p align="center">⭐ If you found this helpful, please star the repo!</p>
+=======
+# house-price-prediction
+Machine Learning project for predicting house prices using regression models.
+>>>>>>> 7c2895a0b8d16352ce37f1d4ef13cdbb950f0750

@@ -1,11 +1,3 @@
-"""
-preprocess.py
--------------
-Data loading, cleaning and feature engineering for House Price Prediction.
-Author : Akash Agale
-GitHub : https://github.com/Akash-Agale
-"""
-
 import numpy as np
 import pandas as pd
 from sklearn.datasets import fetch_california_housing
@@ -45,13 +37,7 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def prepare_data(test_size: float = 0.2, random_state: int = 42, scale: bool = True):
-    """
-    Full pipeline: load → clean → engineer → split → scale.
-
-    Returns
-    -------
-    X_train, X_test, y_train, y_test, scaler (or None if scale=False)
-    """
+   
     df = load_data()
     df = remove_outliers(df, 'MedHouseVal')
     df = engineer_features(df)

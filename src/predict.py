@@ -1,11 +1,3 @@
-"""
-predict.py
-----------
-Load the saved model and make predictions on new data.
-Author : Akash Agale
-GitHub : https://github.com/Akash-Agale
-"""
-
 import numpy as np
 import pandas as pd
 import joblib
@@ -43,26 +35,11 @@ def engineer_input(data: dict) -> pd.DataFrame:
 
 
 def predict(input_data: dict) -> float:
-    """
-    Predict house price for a single input record.
-
-    Parameters
-    ----------
-    input_data : dict
-        Keys: MedInc, HouseAge, AveRooms, AveBedrms,
-              Population, AveOccup, Latitude, Longitude
-
-    Returns
-    -------
-    float : predicted median house value (in $100k)
-    """
+    
     model  = load_model()
     df_in  = engineer_input(input_data)
     price  = model.predict(df_in)[0]
     return round(float(price), 4)
-
-
-# ── Demo ─────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     sample = {
@@ -83,5 +60,5 @@ if __name__ == "__main__":
     print("\nInput Features:")
     for k, v in sample.items():
         print(f"  {k:<15}: {v}")
-    print(f"\n💰 Predicted Price : ${predicted_price * 100_000:,.0f}")
+    print(f"\n Predicted Price : ${predicted_price * 100_000:,.0f}")
     print(f"   (Raw output     : {predicted_price} × $100k)")

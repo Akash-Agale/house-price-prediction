@@ -1,11 +1,3 @@
-"""
-train.py
---------
-Model training, hyperparameter tuning and evaluation.
-Author : Akash Agale
-GitHub : https://github.com/Akash-Agale
-"""
-
 import numpy as np
 import pandas as pd
 import joblib
@@ -18,8 +10,6 @@ import xgboost as xgb
 
 from preprocess import prepare_data
 
-
-# ── Helpers ──────────────────────────────────────────────────────────────────
 
 def evaluate(name: str, model, X_test, y_test) -> dict:
     """Return a metrics dictionary for a fitted model."""
@@ -80,7 +70,7 @@ def save_artifacts(model, scaler, output_dir: str = "../models"):
     print(f"[SAVE] Artifacts written to '{output_dir}/'")
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# ── Main ──
 
 if __name__ == "__main__":
     print("=" * 60)
@@ -107,4 +97,4 @@ if __name__ == "__main__":
 
     # 5. Save
     save_artifacts(best_model, scaler)
-    print("\n✅ Training complete!")
+    print("\n Training complete!")
